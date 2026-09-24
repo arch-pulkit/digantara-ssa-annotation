@@ -75,7 +75,7 @@ for path in sorted(Path("data/raw").glob("*.fits")):
     mask = class_of[segments.data]                     # full-size mask: 0 / 1 / 2 per pixel
 
     # STEP 3: viewable image. Display-only background uses the MEAN (smooth, no
-    # whole-number steps). Detection above is unchanged, so review labels stay valid.
+    # whole-number steps. Detection above is unchanged, so review labels stay valid.
     view_bg = Background2D(image, box_size=128, filter_size=3,
                            sigma_clip=SigmaClip(sigma=3.0),
                            bkg_estimator=MeanBackground())
